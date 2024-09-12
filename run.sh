@@ -1,4 +1,18 @@
 #!/bin/sh
+#
+# This script must be run as root, since it performs actions which need root permissions, namely apt-get and chsh
+# 
+# This script should be run via curl:
+#   sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/calebeden/CS378-automate-setup/main/run.sh)"
+# or via wget:
+#   sudo sh -c "$(wget -qO- https://raw.githubusercontent.com/calebeden/CS378-automate-setup/main/run.sh)"
+# or via fetch:
+#   sudo sh -c "$(fetch -o - https://raw.githubusercontent.com/calebeden/CS378-automate-setup/main/run.sh)"
+#
+# As an alternative, you can first download the install script and run it afterwards:
+#   wget https://raw.githubusercontent.com/calebeden/CS378-automate-setup/main/run.sh
+#   sudo ./run.sh
+
 set -e
 apt-get update
 apt-get install -y openjdk-17-jdk maven git wget htop tmux unzip bzip2 zsh
